@@ -12,9 +12,35 @@ class ProductsService {
   }
  
   async searchProducts(req) {
-    return await this.serviceUtil.search(req.body, 'test');
+    return await this.serviceUtil.search(req.body, constants.COLLECTIONS.PRODUCTS);
   }
 
+  async addProducts(req) {
+    return await this.serviceUtil.add(
+      req.body,
+      constants.COLLECTIONS.PRODUCTS,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async updateProducts(req) {
+    return await this.serviceUtil.update(
+      req.body,
+      constants.COLLECTIONS.PRODUCTS,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async deleteProducts(req) {
+    return await this.serviceUtil.delete(
+      req.params,
+      constants.COLLECTIONS.PRODUCTS,
+      constants.MESSAGES.success
+    );
+  }
+  
 }
 
 module.exports = { ProductsService };

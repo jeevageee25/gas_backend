@@ -10,12 +10,12 @@ class ServiceUtil {
     let output = {};
     let currentDate = new Date();
     let vDb = db.getDb();
-    let user = helpers.GetUserIDFromToken(req);
+    // let user = helpers.GetUserIDFromToken(req);
 
-    params.created_by = user;
+    params.created_by = '';
     params.created_date = currentDate;
     params.modified_date = currentDate;
-    params.modified_by = user;
+    params.modified_by = '';
 
     let res = await vDb.collection(collection).insertOne(params);
     let ops = res.ops[0];
@@ -53,8 +53,8 @@ class ServiceUtil {
     let output = {};
     let currentDate = new Date();
     params.modified_date = currentDate;
-    let user = helpers.GetUserIDFromToken(req);
-    params.modified_by = user;
+    // let user = helpers.GetUserIDFromToken(req);
+    params.modified_by = '';
     let query = {
       _id: mongodb.ObjectID(params._id),
     };

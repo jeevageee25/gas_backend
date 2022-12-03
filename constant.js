@@ -1,4 +1,7 @@
 module.exports = {
+  COLLECTIONS: {
+    PRODUCTS: 'products'
+  },
   MESSAGES: {
     success: "success",
   },
