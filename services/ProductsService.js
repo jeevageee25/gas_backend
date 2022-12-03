@@ -41,6 +41,35 @@ class ProductsService {
     );
   }
   
+  async searchArea(req) {
+    return await this.serviceUtil.search(req.body, constants.COLLECTIONS.AREA);
+  }
+
+  async addArea(req) {
+    return await this.serviceUtil.add(
+      req.body,
+      constants.COLLECTIONS.AREA,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async updateArea(req) {
+    return await this.serviceUtil.update(
+      req.body,
+      constants.COLLECTIONS.AREA,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async deleteArea(req) {
+    return await this.serviceUtil.delete(
+      req.params,
+      constants.COLLECTIONS.AREA,
+      constants.MESSAGES.success
+    );
+  }
 }
 
 module.exports = { ProductsService };

@@ -51,6 +51,85 @@ class ProductsController {
     }
   }
 
+  async searchExecutive(req, res) {
+    try {
+      const pService = await service.searchExecutive(req);
+      return appUtils.successResponse(
+        res,
+        pService,
+        constants.MESSAGES.success
+      );
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async addExecutive(req, res) {
+    try {
+      const pService = await service.addExecutive(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async updateExecutive(req, res) {
+    try {
+      const pService = await service.updateExecutive(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async deleteExecutive(req, res) {
+    try {
+      const pService = await service.deleteExecutive(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async searchArea(req, res) {
+    try {
+      const pService = await service.searchArea(req);
+      return appUtils.successResponse(
+        res,
+        pService,
+        constants.MESSAGES.success
+      );
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async addArea(req, res) {
+    try {
+      const pService = await service.addArea(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async updateArea(req, res) {
+    try {
+      const pService = await service.updateArea(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async deleteArea(req, res) {
+    try {
+      const pService = await service.deleteArea(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
 }
 
 module.exports = { ProductsController };

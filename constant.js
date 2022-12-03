@@ -1,6 +1,8 @@
 module.exports = {
   COLLECTIONS: {
-    PRODUCTS: 'products'
+    PRODUCTS: 'products',
+    EXECUTIVE: 'delivery_executive',
+    AREA: 'delivery_area',
   },
   MESSAGES: {
     success: "success",
