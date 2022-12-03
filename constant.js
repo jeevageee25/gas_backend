@@ -3,7 +3,8 @@ module.exports = {
     PRODUCTS: 'products',
     EXECUTIVE: 'delivery_executive',
     AREA: 'delivery_area',
-    ROLE: 'role'
+    ROLE: 'role',
+    EMPLOYEES:'employees'
   },
   MESSAGES: {
     success: "success",

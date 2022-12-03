@@ -100,6 +100,36 @@ class ProductsService {
       constants.MESSAGES.success
     );
   }
+
+  async searchExecutive(req) {
+    return await this.serviceUtil.search(req.body, constants.COLLECTIONS.EMPLOYEES);
+  }
+
+  async addExecutive(req) {
+    return await this.serviceUtil.add(
+      req.body,
+      constants.COLLECTIONS.EMPLOYEES,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async updateExecutive(req) {
+    return await this.serviceUtil.update(
+      req.body,
+      constants.COLLECTIONS.EMPLOYEES,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async deleteExecutive(req) {
+    return await this.serviceUtil.delete(
+      req.params,
+      constants.COLLECTIONS.EMPLOYEES,
+      constants.MESSAGES.success
+    );
+  }
 }
 
 module.exports = { ProductsService };

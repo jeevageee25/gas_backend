@@ -59,6 +59,22 @@ const schemas = {
     _id: Joi.string().required(),
     role: Joi.string().optional(),
   }),
+  searchExecutive: Joi.object().keys({
+    search_key: Joi.object().required(),
+    page: Joi.number().optional(),
+    perPage: Joi.number().optional(),
+  }),
+  addExecutive: Joi.object({
+    role: Joi.string().required(),
+    siebel_code: Joi.string().required(),
+    staff_name: Joi.string().required(),
+  }),
+  updateExecutive: Joi.object({
+    _id: Joi.string().required(),
+    role: Joi.string().optional(),
+    siebel_code: Joi.string().required(),
+    staff_name: Joi.string().required(),
+  }),
 };
 
 module.exports = schemas;
