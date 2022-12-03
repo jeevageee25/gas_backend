@@ -61,4 +61,22 @@ router.delete('/executive/delete/:_id', validator(schemas.delete, 'params'),
     controller.deleteExecutive
 );
  
+// Role
+
+router.post('/role/search', validator(schemas.searchRole, 'body'),
+    controller.searchRole
+);
+
+router.post('/role/add', validator(schemas.addRole, 'body'),
+    controller.addRole
+);
+
+router.post('/role/update', validator(schemas.updateRole, 'body'),
+    controller.updateRole
+);
+
+router.delete('/role/delete/:_id', validator(schemas.delete, 'params'),
+    controller.deleteRole
+);
+ 
 module.exports = router;

@@ -47,6 +47,18 @@ const schemas = {
     _id: Joi.string().required(),
     area: Joi.string().optional(),
   }),
+  searchRole: Joi.object().keys({
+    search_key: Joi.object().required(),
+    page: Joi.number().optional(),
+    perPage: Joi.number().optional(),
+  }),
+  addRole: Joi.object({
+    role: Joi.string().required(),
+  }),
+  updateRole: Joi.object({
+    _id: Joi.string().required(),
+    role: Joi.string().optional(),
+  }),
 };
 
 module.exports = schemas;

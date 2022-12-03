@@ -130,6 +130,46 @@ class ProductsController {
       return appUtils.errorResponse(res, error, constants.code.error_code);
     }
   }
+
+  async searchRole(req, res) {
+    try {
+      const pService = await service.searchRole(req);
+      return appUtils.successResponse(
+        res,
+        pService,
+        constants.MESSAGES.success
+      );
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async addRole(req, res) {
+    try {
+      const pService = await service.addRole(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async updateRole(req, res) {
+    try {
+      const pService = await service.updateRole(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async deleteRole(req, res) {
+    try {
+      const pService = await service.deleteRole(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
 }
 
 module.exports = { ProductsController };

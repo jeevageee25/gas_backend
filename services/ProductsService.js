@@ -70,6 +70,36 @@ class ProductsService {
       constants.MESSAGES.success
     );
   }
+
+  async searchRole(req) {
+    return await this.serviceUtil.search(req.body, constants.COLLECTIONS.ROLE);
+  }
+
+  async addRole(req) {
+    return await this.serviceUtil.add(
+      req.body,
+      constants.COLLECTIONS.ROLE,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async updateRole(req) {
+    return await this.serviceUtil.update(
+      req.body,
+      constants.COLLECTIONS.ROLE,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async deleteRole(req) {
+    return await this.serviceUtil.delete(
+      req.params,
+      constants.COLLECTIONS.ROLE,
+      constants.MESSAGES.success
+    );
+  }
 }
 
 module.exports = { ProductsService };
