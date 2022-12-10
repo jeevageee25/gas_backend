@@ -58,6 +58,7 @@ const schemas = {
   updateRole: Joi.object({
     _id: Joi.string().required(),
     role: Joi.string().optional(),
+    previledge: Joi.array().optional(),
   }),
   searchExecutive: Joi.object().keys({
     search_key: Joi.object().required(),
