@@ -83,13 +83,11 @@ const schemas = {
   }),
   addAreaAllocation: Joi.object({
     allocation_date: Joi.string().required(),
-    area_ids: Joi.array().required(),
-    executive_id: Joi.string().required(),
+    allocation_data: Joi.array().required(),
   }),
   updateAreaAllocation: Joi.object({
     _id: Joi.string().required(),
-    area_ids: Joi.array().required(),
-    executive_id: Joi.string().required(),
+    allocation_data: Joi.array().optional(),
   }),
   searchDefaultAreaAllocation: Joi.object().keys({
     search_key: Joi.object().required(),
