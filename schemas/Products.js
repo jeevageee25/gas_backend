@@ -88,7 +88,20 @@ const schemas = {
   }),
   updateAreaAllocation: Joi.object({
     _id: Joi.string().required(),
-    allocation_date: Joi.string().optional(),
+    area_ids: Joi.array().required(),
+    executive_id: Joi.string().required(),
+  }),
+  searchDefaultAreaAllocation: Joi.object().keys({
+    search_key: Joi.object().required(),
+    page: Joi.number().optional(),
+    perPage: Joi.number().optional(),
+  }),
+  addDefaultAreaAllocation: Joi.object({
+    area_ids: Joi.array().required(),
+    executive_id: Joi.string().required(),
+  }),
+  updateDefaultAreaAllocation: Joi.object({
+    _id: Joi.string().required(),
     area_ids: Joi.array().required(),
     executive_id: Joi.string().required(),
   }),

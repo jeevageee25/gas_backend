@@ -5,7 +5,8 @@ module.exports = {
     AREA: 'delivery_area',
     ROLE: 'role',
     EMPLOYEES:'employees',
-    AREA_ALLOCATION:'area_allocation'
+    AREA_ALLOCATION:'area_allocation',
+    DEFAULT_AREA_ALLOCATION:'default_area_allocation'
   },
   MESSAGES: {
     success: "success",

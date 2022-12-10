@@ -161,6 +161,38 @@ class ProductsService {
     );
   }
 
+  //Default Area Allocation
+
+  async searchDefaultAreaAllocation(req) {
+    return await this.serviceUtil.search(req.body, constants.COLLECTIONS.DEFAULT_AREA_ALLOCATION);
+  }
+
+  async addDefaultAreaAllocation(req) {
+    return await this.serviceUtil.add(
+      req.body,
+      constants.COLLECTIONS.DEFAULT_AREA_ALLOCATION,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async updateDefaultAreaAllocation(req) {
+    return await this.serviceUtil.update(
+      req.body,
+      constants.COLLECTIONS.DEFAULT_AREA_ALLOCATION,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async deleteDefaultAreaAllocation(req) {
+    return await this.serviceUtil.delete(
+      req.params,
+      constants.COLLECTIONS.DEFAULT_AREA_ALLOCATION,
+      constants.MESSAGES.success
+    );
+  }
+
 }
 
 module.exports = { ProductsService };
