@@ -5,7 +5,7 @@ const middleware = require('../middleware/jwtHandler');
 const validator = require('../middleware/SchemaValidator')
 const schemas = require('../schemas').Products;
 const controller = new ProductsController();
- 
+
 
 //PRODUCTS 
 
@@ -60,7 +60,7 @@ router.post('/executive/update', validator(schemas.updateExecutive, 'body'),
 router.delete('/executive/delete/:_id', validator(schemas.delete, 'params'),
     controller.deleteExecutive
 );
- 
+
 // Role
 
 router.post('/role/search', validator(schemas.searchRole, 'body'),
@@ -78,5 +78,24 @@ router.post('/role/update', validator(schemas.updateRole, 'body'),
 router.delete('/role/delete/:_id', validator(schemas.delete, 'params'),
     controller.deleteRole
 );
- 
+
+// Area Allocation
+
+router.post('/area_allocation/search', validator(schemas.searchAreaAllocation, 'body'),
+    controller.searchAreaAllocation
+);
+
+router.post('/area_allocation/add', validator(schemas.addAreaAllocation, 'body'),
+    controller.addAreaAllocation
+);
+
+router.post('/area_allocation/update', validator(schemas.updateAreaAllocation, 'body'),
+    controller.updateAreaAllocation
+);
+
+router.delete('/area_allocation/delete/:_id', validator(schemas.delete, 'params'),
+    controller.deleteAreaAllocation
+);
+
+
 module.exports = router;

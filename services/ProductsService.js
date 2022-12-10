@@ -130,6 +130,37 @@ class ProductsService {
       constants.MESSAGES.success
     );
   }
+
+  async searchAreaAllocation(req) {
+    return await this.serviceUtil.search(req.body, constants.COLLECTIONS.AREA_ALLOCATION);
+  }
+
+  async addAreaAllocation(req) {
+    return await this.serviceUtil.add(
+      req.body,
+      constants.COLLECTIONS.AREA_ALLOCATION,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async updateAreaAllocation(req) {
+    return await this.serviceUtil.update(
+      req.body,
+      constants.COLLECTIONS.AREA_ALLOCATION,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async deleteAreaAllocation(req) {
+    return await this.serviceUtil.delete(
+      req.params,
+      constants.COLLECTIONS.AREA_ALLOCATION,
+      constants.MESSAGES.success
+    );
+  }
+
 }
 
 module.exports = { ProductsService };

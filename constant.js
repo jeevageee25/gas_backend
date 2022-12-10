@@ -4,7 +4,8 @@ module.exports = {
     EXECUTIVE: 'delivery_executive',
     AREA: 'delivery_area',
     ROLE: 'role',
-    EMPLOYEES:'employees'
+    EMPLOYEES:'employees',
+    AREA_ALLOCATION:'area_allocation'
   },
   MESSAGES: {
     success: "success",

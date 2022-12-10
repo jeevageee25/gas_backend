@@ -170,6 +170,46 @@ class ProductsController {
       return appUtils.errorResponse(res, error, constants.code.error_code);
     }
   }
+
+  async searchAreaAllocation(req, res) {
+    try {
+      const pService = await service.searchAreaAllocation(req);
+      return appUtils.successResponse(
+        res,
+        pService,
+        constants.MESSAGES.success
+      );
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async addAreaAllocation(req, res) {
+    try {
+      const pService = await service.addAreaAllocation(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async updateAreaAllocation(req, res) {
+    try {
+      const pService = await service.updateAreaAllocation(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async deleteAreaAllocation(req, res) {
+    try {
+      const pService = await service.deleteAreaAllocation(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
 }
 
 module.exports = { ProductsController };
