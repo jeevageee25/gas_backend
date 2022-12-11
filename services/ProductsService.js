@@ -193,6 +193,38 @@ class ProductsService {
     );
   }
 
+  //Sales Entry
+
+  async searchSales(req) {
+    return await this.serviceUtil.search(req.body, constants.COLLECTIONS.SALES_ENTRY);
+  }
+
+  async addSales(req) {
+    return await this.serviceUtil.add(
+      req.body,
+      constants.COLLECTIONS.SALES_ENTRY,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async updateSales(req) {
+    return await this.serviceUtil.update(
+      req.body,
+      constants.COLLECTIONS.SALES_ENTRY,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async deleteSales(req) {
+    return await this.serviceUtil.delete(
+      req.params,
+      constants.COLLECTIONS.SALES_ENTRY,
+      constants.MESSAGES.success
+    );
+  }
+
 }
 
 module.exports = { ProductsService };

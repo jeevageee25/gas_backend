@@ -115,4 +115,22 @@ router.delete('/default_area_allocation/delete/:_id', validator(schemas.delete, 
     controller.deleteDefaultAreaAllocation
 );
 
+// Area Allocation
+
+router.post('/sales_entry/search', validator(schemas.searchSales, 'body'),
+    controller.searchSales
+);
+
+router.post('/sales_entry/add', validator(schemas.addSales, 'body'),
+    controller.addSales
+);
+
+router.post('/sales_entry/update', validator(schemas.updateSales, 'body'),
+    controller.updateSales
+);
+
+router.delete('/sales_entry/delete/:_id', validator(schemas.delete, 'params'),
+    controller.deleteSales
+);
+
 module.exports = router;

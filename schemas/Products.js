@@ -103,6 +103,22 @@ const schemas = {
     area_ids: Joi.array().required(),
     executive_id: Joi.string().required(),
   }),
+  searchSales: Joi.object().keys({
+    search_key: Joi.object().required(),
+    page: Joi.number().optional(),
+    perPage: Joi.number().optional(),
+  }),
+  addSales: Joi.object({
+    entries: Joi.array().required(),
+    executive_id: Joi.string().required(),
+    allocation_date: Joi.string().required(),
+  }),
+  updateSales: Joi.object({
+    _id: Joi.string().required(),
+    entries: Joi.array().optional(),
+    executive_id: Joi.string().optional(),
+    allocation_date: Joi.string().optional(),
+  }),
 };
 
 module.exports = schemas;

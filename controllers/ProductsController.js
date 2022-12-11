@@ -250,6 +250,46 @@ class ProductsController {
       return appUtils.errorResponse(res, error, constants.code.error_code);
     }
   }
+
+  async searchSales(req, res) {
+    try {
+      const pService = await service.searchSales(req);
+      return appUtils.successResponse(
+        res,
+        pService,
+        constants.MESSAGES.success
+      );
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async addSales(req, res) {
+    try {
+      const pService = await service.addSales(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async updateSales(req, res) {
+    try {
+      const pService = await service.updateSales(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async deleteSales(req, res) {
+    try {
+      const pService = await service.deleteSales(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
 }
 
 module.exports = { ProductsController };
