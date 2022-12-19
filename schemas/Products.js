@@ -69,12 +69,16 @@ const schemas = {
     role: Joi.string().required(),
     siebel_code: Joi.string().required(),
     staff_name: Joi.string().required(),
+    user_name: Joi.string().required(),
+    password: Joi.string().required(),
   }),
   updateExecutive: Joi.object({
     _id: Joi.string().required(),
     role: Joi.string().optional(),
     siebel_code: Joi.string().required(),
     staff_name: Joi.string().required(),
+    user_name: Joi.string().required(),
+    password: Joi.string().required(),
   }),
   searchAreaAllocation: Joi.object().keys({
     search_key: Joi.object().required(),
