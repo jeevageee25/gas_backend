@@ -121,14 +121,7 @@ const schemas = {
     price: Joi.number().required(),
     product: Joi.string().required(),
     supplied: Joi.number().required(),
-    txn_id: Joi.string().optional(),
-    2000: Joi.number().optional(),
-    500: Joi.number().optional(),
-    100: Joi.number().optional(),
-    50: Joi.number().optional(),
-    20: Joi.number().optional(),
-    10: Joi.number().optional(),
-    5: Joi.number().optional(),
+    payments: Joi.object().required()
   }),
   updateSales: Joi.object({
     _id: Joi.string().required(),
@@ -140,14 +133,7 @@ const schemas = {
     price: Joi.number().optional(),
     product: Joi.string().optional(),
     supplied: Joi.number().optional(),
-    txn_id: Joi.string().optional(),
-    2000: Joi.number().optional(),
-    500: Joi.number().optional(),
-    100: Joi.number().optional(),
-    50: Joi.number().optional(),
-    20: Joi.number().optional(),
-    10: Joi.number().optional(),
-    5: Joi.number().optional(),
+    payments: Joi.object().optional()
   }),
 };
 
