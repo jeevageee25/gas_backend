@@ -71,6 +71,7 @@ const schemas = {
     staff_name: Joi.string().required(),
     user_name: Joi.string().required(),
     password: Joi.string().required(),
+    profile_update: Joi.boolean().optional(),
   }),
   updateExecutive: Joi.object({
     _id: Joi.string().required(),
