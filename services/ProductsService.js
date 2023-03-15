@@ -101,6 +101,36 @@ class ProductsService {
     );
   }
 
+  async searchpayment(req) {
+    return await this.serviceUtil.search(req.body, constants.COLLECTIONS.PAYMENT);
+  }
+
+  async addpayment(req) {
+    return await this.serviceUtil.add(
+      req.body,
+      constants.COLLECTIONS.PAYMENT,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async updatepayment(req) {
+    return await this.serviceUtil.update(
+      req.body,
+      constants.COLLECTIONS.PAYMENT,
+      constants.MESSAGES.success,
+      req
+    );
+  }
+
+  async deletepayment(req) {
+    return await this.serviceUtil.delete(
+      req.params,
+      constants.COLLECTIONS.PAYMENT,
+      constants.MESSAGES.success
+    );
+  }
+
   async searchExecutive(req) {
     return await this.serviceUtil.search(req.body, constants.COLLECTIONS.EMPLOYEES);
   }

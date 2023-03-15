@@ -7,7 +7,8 @@ module.exports = {
     EMPLOYEES:'employees',
     AREA_ALLOCATION:'area_allocation',
     DEFAULT_AREA_ALLOCATION:'default_area_allocation',
-    SALES_ENTRY:'sales'
+    SALES_ENTRY:'sales',
+    PAYMENT:"payment"
   },
   MESSAGES: {
     success: "success",

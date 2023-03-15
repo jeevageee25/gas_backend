@@ -79,6 +79,24 @@ router.delete('/role/delete/:_id', validator(schemas.delete, 'params'),
     controller.deleteRole
 );
 
+// Role
+
+router.post('/payment/search', validator(schemas.searchpayment, 'body'),
+    controller.searchpayment
+);
+
+router.post('/payment/add', validator(schemas.addpayment, 'body'),
+    controller.addpayment
+);
+
+router.post('/payment/update', validator(schemas.updatepayment, 'body'),
+    controller.updatepayment
+);
+
+router.delete('/payment/delete/:_id', validator(schemas.delete, 'params'),
+    controller.deletepayment
+);
+
 // Area Allocation
 
 router.post('/area_allocation/search', validator(schemas.searchAreaAllocation, 'body'),

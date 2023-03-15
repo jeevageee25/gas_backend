@@ -60,6 +60,22 @@ const schemas = {
     role: Joi.string().optional(),
     previledge: Joi.array().optional(),
   }),
+  searchpayment: Joi.object().keys({
+    search_key: Joi.object().required(),
+    page: Joi.number().optional(),
+    perPage: Joi.number().optional(),
+  }),
+  addpayment: Joi.object({
+    name: Joi.string().required(),
+    mobile: Joi.string().required(),
+    amount: Joi.number().required(),
+  }),
+  updatepayment: Joi.object({
+    _id: Joi.string().required(),
+    name: Joi.string().optional(),
+    mobile: Joi.string().optional(),
+    amount: Joi.number().optional(),
+  }),
   searchExecutive: Joi.object().keys({
     search_key: Joi.object().required(),
     page: Joi.number().optional(),

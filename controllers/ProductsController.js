@@ -171,6 +171,46 @@ class ProductsController {
     }
   }
 
+  async searchpayment(req, res) {
+    try {
+      const pService = await service.searchpayment(req);
+      return appUtils.successResponse(
+        res,
+        pService,
+        constants.MESSAGES.success
+      );
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async addpayment(req, res) {
+    try {
+      const pService = await service.addpayment(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async updatepayment(req, res) {
+    try {
+      const pService = await service.updatepayment(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
+  async deletepayment(req, res) {
+    try {
+      const pService = await service.deletepayment(req);
+      return appUtils.successResponse(res, pService, constants.MESSAGES.success);
+    } catch (error) {
+      return appUtils.errorResponse(res, error, constants.code.error_code);
+    }
+  }
+
   async searchAreaAllocation(req, res) {
     try {
       const pService = await service.searchAreaAllocation(req);
