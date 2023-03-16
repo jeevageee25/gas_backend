@@ -162,6 +162,15 @@ class ProductsService {
   }
 
   async searchAreaAllocation(req) {
+    if(req.body.search_key.from_date){
+      const f_date = new Date(req.body.search_key.from_date);
+      f_date.setHours(0,0,0,0)
+      const t_date = new Date(req.body.search_key.to_date);
+      t_date.setHours(0,0,0,0)
+      req.body.search_key['date']={$gte:f_date, $lte:t_date};
+      delete req.body.search_key.from_date;
+      delete req.body.search_key.to_date;
+    }
     return await this.serviceUtil.search(req.body, constants.COLLECTIONS.AREA_ALLOCATION);
   }
 
@@ -227,6 +236,16 @@ class ProductsService {
   //Sales Entry
 
   async searchSales(req) {
+    if(req.body.search_key.from_date){
+      const f_date = new Date(req.body.search_key.from_date);
+      f_date.setHours(0,0,0,0)
+      const t_date = new Date(req.body.search_key.to_date);
+      t_date.setDate(t_date.getDate()+1);
+      t_date.setHours(0,0,0,0)
+      req.body.search_key['created_date']={$gte:f_date, $lte:t_date};
+      delete req.body.search_key.from_date;
+      delete req.body.search_key.to_date;
+    }
     return await this.serviceUtil.search(req.body, constants.COLLECTIONS.SALES_ENTRY);
   }
 
