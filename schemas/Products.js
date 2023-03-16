@@ -103,6 +103,7 @@ const schemas = {
     perPage: Joi.number().optional(),
   }),
   addAreaAllocation: Joi.object({
+    date: Joi.date().required(),
     allocation_date: Joi.string().required(),
     allocation_data: Joi.array().required(),
   }),

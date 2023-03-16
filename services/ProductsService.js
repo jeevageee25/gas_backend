@@ -166,6 +166,7 @@ class ProductsService {
   }
 
   async addAreaAllocation(req) {
+    req.body.date = new Date(req.body.date);
     return await this.serviceUtil.add(
       req.body,
       constants.COLLECTIONS.AREA_ALLOCATION,
