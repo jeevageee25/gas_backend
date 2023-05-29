@@ -84,6 +84,7 @@ const schemas = {
   addExecutive: Joi.object({
     role: Joi.string().required(),
     siebel_code: Joi.string().required(),
+    mobile_number: Joi.string().optional(),
     staff_name: Joi.string().required(),
     user_name: Joi.string().required(),
     password: Joi.string().required(),
@@ -94,6 +95,7 @@ const schemas = {
     role: Joi.string().optional(),
     siebel_code: Joi.string().required(),
     staff_name: Joi.string().required(),
+    mobile_number: Joi.string().optional(),
     user_name: Joi.string().required(),
     password: Joi.string().required(),
   }),
