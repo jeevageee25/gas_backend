@@ -11,12 +11,12 @@ module.exports = {
   },
   connectDb: function (callback) {
     MongoClient.connect(
-      config.Database.DFARM.connectString,
+      config.Database.GAS.connectString,
       { poolSize: 20, useNewUrlParser: true },
       function (err, client) {
-        _db = client.db(config.Database.DFARM.dbName);
+        _db = client.db(config.Database.GAS.dbName);
         //console.log("_db:" + util.inspect(_db));
-        _masterDb = client.db(config.Database.DFARM.masterDB);
+        _masterDb = client.db(config.Database.GAS.masterDB);
         return callback(err);
       }
     );

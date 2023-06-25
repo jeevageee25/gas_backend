@@ -5,7 +5,7 @@
     "gcInterval": 3600000
   },
   "Database": {
-    "DFARM": {
+    "GAS": {
       "connectString": "mongodb+srv://jeevageee25:student0Z@cluster0.d1izp.mongodb.net",
       "dbName": "gas"
     },
